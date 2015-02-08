@@ -4,7 +4,7 @@ class sl_tx {
   # temporarily stage the sl rpm so we can install the software.
   transition { 'stage sl rpm':
     resource   => File['/tmp/sl-5.02-1.el6.x86_64.rpm'],
-    attributes => { ensure => present, source => 'puppet:///modules/sl_tx/sl-5.02-1.el6.x86_64.rpm' },
+    attributes => { ensure => file, source => 'puppet:///modules/sl_tx/sl-5.02-1.el6.x86_64.rpm' },
     prior_to   => Package['sl'],
   }
 
